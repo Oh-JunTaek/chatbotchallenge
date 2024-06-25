@@ -1,2 +1,3 @@
 
 chatbot_model/model.safetensors
+data/squad/train-v2.0.json
