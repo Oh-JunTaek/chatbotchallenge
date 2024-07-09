@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        #chatbox {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: scroll;
+        }
+        #user-input {
+            width: 280px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat with Bot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="user-input" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            if (!userInput) return;
+
+            // Append user message to chatbox
+            const chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+
+            // Send message to server
+            const response = await fetch('/webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userInput })
+            });
+            const data = await response.json();
+
+            // Append bot response to chatbox
+            chatbox.innerHTML += `<div><strong>Bot:</strong> ${data.response}</div>`;
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            // Clear input field
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+</html>
