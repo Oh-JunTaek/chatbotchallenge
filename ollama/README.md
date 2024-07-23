@@ -11,3 +11,14 @@ ollama create EEVE-Korean-10.8B -f /Users/eunma/Documents/model/Modelfile
 
 ## 올라마 실행
 ollama run EEVE-Korean-10.8B:latest
+
+## 서버 실행
+cd /Users/eunma/Documents/GitHub/chatbotchallenge/ollama/app
+python server.py
+
+## 가상환경
+1. 시작 : conda activate chatbot_env
+2. 종료 : conda deactivate
+
+## 경로
+1. cd /Users/eunma/Documents/GitHub/langserve_ollama
