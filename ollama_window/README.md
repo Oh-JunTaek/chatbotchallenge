@@ -33,6 +33,7 @@ chatbot_env\Scripts\activate
 ## 로컬 주소 
 
 http://localhost:8000/
+http://127.0.0.1:8000/
 
 
 # 라이센스
