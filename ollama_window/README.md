@@ -29,3 +29,7 @@ cd C:\Users\dev\Documents\GitHub\chatbotchallenge\ollama_window
 chatbot_env\Scripts\activate
 
 종료 : deactivate
+
+## 로컬 주소 
+
+http://localhost:8000/
