@@ -1,0 +1,20 @@
+FROM C:\Users\dev\.ollama\models\blobs\sha256-87048bcd55216712ef14c11c2c303728463207b165bf18440b9b84b07ec00f87
+
+TEMPLATE """{{- if .System }}
+system
+{{ .System }}
+{{- end }}
+user:
+{{ .Prompt }}
+assistant:
+"""
+
+SYSTEM """A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."""
+
+PARAMETER temperature 0.3
+PARAMETER stop user:
+PARAMETER stop assistant:
+PARAMETER config_path C:\Users\dev\.ollama\models\blobs\sha256-e711233e734332fe5f8a09b2407fb5a083e39ca7e0ba90788026414cd4c059af
+PARAMETER template_path C:\Users\dev\.ollama\models\blobs\sha256-8cf247399e57085e6b34c345ebea38c1aa3e2b25c8294eecb746dd7b01dd9079
+PARAMETER license_path C:\Users\dev\.ollama\models\blobs\sha256-f1cd752815fcf68c3c2e73b2b00b5396c5dffb9eebe49567573f275f9ec85fcd
+PARAMETER params_path C:\Users\dev\.ollama\models\blobs\sha256-56bb8bd477a519ffa694fc449c2413c6f0e1d3b1c88fa7e3c9d88d3ae49d4dcb
