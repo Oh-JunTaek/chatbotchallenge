@@ -22,3 +22,10 @@ python server.py
 
 ## 경로
 1. cd /Users/dev/Documents/GitHub/chatbotchallenge/ollama_window
+
+## 가상환경
+
+cd C:\Users\dev\Documents\GitHub\chatbotchallenge\ollama_window
+chatbot_env\Scripts\activate
+
+종료 : deactivate
